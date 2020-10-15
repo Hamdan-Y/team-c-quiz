@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <script>function check(){
+  
+        var question1=document.quiz.question1.value;
+        var question2=document.quiz.question2.value;
+        var question3=document.quiz.question3.value;
+        var question4=document.quiz.question4.value;
+        var question5=document.quiz.question5.value;
+        
+        
+        
+        var correct=0;
+        
+        
+            if (question1=="Maldives"){
+                correct++;
+          }
+        
+        
+           if (question2=="Indian ocean"){
+               correct++;
+          }  
+        
+        
+          if (question3=="Rufiya"){
+              correct++;
+          }
+          if (question4=="Male"){
+              correct++;
+          }
+          if (question5=="fishing"){
+              correct++;
+          }
+
+        
+        
+        var messages=["CONGRATS!!!","That's fine","You haven't touched the IT book!!!"];
+        var pictures=["https://i.pinimg.com/originals/d0/18/ee/d018eecd1b40980273f4639197661586.png","https://images.squarespace-cdn.com/content/v1/5b78f925a2772c74c60cb6d3/1536168382735-CPO2KJPM4JW8OF28DM49/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwkCFOLgzJj4yIx-vIIEbyWWRd0QUGL6lY_wBICnBy59Ye9GKQq6_hlXZJyaybXpCc/logo-sponsor-good-500x500.png","https://www.onlygfx.com/wp-content/uploads/2020/05/fail-stamp-7.png"];
+        var range;
+        
+        
+          if(correct<1){
+              range=2;
+          }
+          
+          if(correct>0&&correct<5){
+              range=1;
+          }
+          
+          if(correct>4){
+              range=0;
+              pics=0;
+          }
+        
+        
+        document.getElementById("after_submit").style.visibility="visible";
+        
+        
+        document.getElementById("messages").innerHTML=messages[range];
+        
+        document.getElementById("messages").style.fontSize = "2em";
+        document.getElementById("messages").style.color = "white";
+        
+        document.getElementById("number_correct").innerHTML="&rarr;YOU GOT "+correct+" CORRECT.";
+        
+        document.getElementById("number_correct").style.fontSize= "2em";
+        document.getElementById("number_correct").style.color = "white";
+        document.getElementById("number_correct").style.marginTop = "2em";
+        document.getElementById("pictures").src=pictures[range];
+        document.getElementById("pictures").style.width = "500px";
+        
+        function refreshPage(){
+    window.location.reload();
+} 
+        }</script>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
+        <style>
+
+            body {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+}
+
+#quiz {
+    
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    background:	rgb(255, 132, 132);
+    padding:10px 20px 10px 20px;
+    width:device-width;
+    border-radius:20px;
+    float: left;
+    
+}
+
+
+
+h1 {
+    text-align:center;
+    color: #ffffff;
+    font-size: 50px;
+
+}
+#description {
+    float: center;
+    color: #ffffff;
+    text-align:center;
+    font-size: 25px;
+}
+#input {
+    margin:20px;
+    display:block ;
+}
+
+
+#textbox {
+    height:22px;
+    width:120px;
+    font-size:16px;
+    border-radius:5px;
+    border:none;
+    padding-left:5px; 
+}
+
+
+#button {
+    background:green;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    color:white;
+    font-size:16px;
+    transition-duration:.5s;
+    margin-top:15px;
+}
+
+#refresh {
+    background:green;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    color:white;
+    font-size:16px;
+    transition-duration:.5s;
+    margin-top:15px;
+}
+
+#button.hover {
+    background:white;
+    border:1px solid green;
+    color:black;
+    cursor:pointer;
+   
+}
+
+
+#after_submit {
+    visibility:hidden;
+    padding:10px 20px 10px 20px;
+    width:device-width;
+    border-radius:20px;
+    float:center;
+    margin-left:20px;
+    font-size: 50px;
+}
+
+
+#pictures {
+    width:100%;
+    height:100%;
+}
+        </style>
+        <title>TEAM-C's IT Quiz</title>
+    </head>
+    <body>
+     <h1>CLASS 8 IT Quiz
+     </h1>
+     <p id="description">This quiz is based on the travel blog on Maldives.</p>
+     <div style="background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&w=1000&q=80');"></div>
+     
+     <form id="quiz" name="quiz">
+        
+     <p>Which is known as "the tropical paradise"?</p>
+     <input type="radio" id="mc" name="question1" value="New York">New York<br>
+     <input type="radio" id="mc" name="question1" value="Maldives">Maldives<br>
+     <input type="radio" id="mc" name="question1" value="Lakshadweep">Lakshadweep<br>
+     <input type="radio" id="mc" name="question1" value="Andaman and Nicobar Islands">Andaman and Nicobar Islands<br>
+     
+     <p>Where is maldivas situated?</p>
+     <input type="radio" id="mc" name="question2" value="Indian ocean">Indian ocean<br>
+     <input type="radio" id="mc" name="question2" value="Arabian sea">Arabian sea<br>
+     <input type="radio" id="mc" name="question2" value="Pacific Ocean">Pacific Ocean<br>
+     <input type="radio" id="mc" name="question2" value="Bay of bengal">Bay of bengal<br>
+
+     <p>What is the national currency of Maldives?</p>
+     <input type="radio" id="mc" name="question3" value="Dollar">Dollar<br>
+     <input type="radio" id="mc" name="question3" value="Rupee">Rupee<br>
+     <input type="radio" id="mc" name="question3" value="Rufiya">Rufiya<br>
+     <input type="radio" id="mc" name="question3" value="Lira">Lira<br>
+
+     <p>What is the capital of Maldives?</p>
+     <input type="radio" id="mc" name="question4" value="Tirana">Tirana<br>
+     <input type="radio" id="mc" name="question4" value="Male">Male<br>
+     <input type="radio" id="mc" name="question4" value="Brussels">Brussels<br>
+     <input type="radio" id="mc" name="question4" value="Dublin">Dublin<br>
+
+
+     <p>What is the majour occupation of people in Maldives?</p>
+     <input type="radio" id="mc" name="question5" value="cook">cook<br>
+     <input type="radio" id="mc" name="question5" value="Taxi driver">Taxi driver<br>
+     <input type="radio" id="mc" name="question5" value="guide">guide<br>
+     <input type="radio" id="mc" name="question5" value="fishing">fishing<br>
+
+     
+     <input id="button" type="button" value="I'm finished!" onclick="check();">
+     <button id="refresh" onClick="window.location.reload();">Refresh Page</button>
+     
+     </form>
+     
+     <div id="after_submit"></div>
+     
+     <p id="messages"></p>
+     <p id="number_correct"></p>
+     <img id="pictures">
+     
+     
+     
+    </body>
+</html>
